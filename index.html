@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja strona - GitHub Pages</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        
+        .emoji {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .info {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .info p {
+            margin: 10px 0;
+            font-size: 0.95em;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 5px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid #667eea;
+            margin: 30px 0;
+            opacity: 0.3;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">🚀</div>
+        <h1>Moja strona na GitHub Pages</h1>
+        <p>Ćwiczenie 7 - Hosting aplikacji webowych</p>
+        
+        <hr>
+        
+        <h2 style="color: #764ba2; margin-bottom: 15px;">✅ Strona działa!</h2>
+        <p>To jest statyczna strona hostowana na GitHub Pages</p>
+        
+        <div class="info">
+            <p><strong>🕐 Czas:</strong> <span id="time"></span></p>
+            <p><strong>🌍 URL:</strong> <span id="url"></span></p>
+            <p><strong>🔒 Protokół:</strong> <span id="protocol"></span></p>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <span class="badge">HTML</span>
+            <span class="badge">CSS</span>
+            <span class="badge">JavaScript</span>
+            <span class="badge">GitHub Pages</span>
+        </div>
+        
+        <hr>
+        
+        <p style="font-size: 0.9em; color: #666;">
+            Projekt: <a href="https://github.com/TWOJ-USERNAME/moja-strona" target="_blank">GitHub Repository</a>
+        </p>
+    </div>
+    
+    <script>
+        // Aktualizuj czas
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('time').textContent = now.toLocaleString('pl-PL');
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+        
+        // Pokaż URL
+        document.getElementById('url').textContent = window.location.href;
+        
+        // Pokaż protokół
+        const protocol = window.location.protocol === 'https:' ? '🔒 HTTPS (Bezpieczne)' : '🔓 HTTP';
+        document.getElementById('protocol').textContent = protocol;
+    </script>
+</body>
+</html>
